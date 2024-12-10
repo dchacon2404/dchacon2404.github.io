@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudiantes Matriculados</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Encabezado Principal -->
+    <header class="main-header">
+        <div class="header-top">
+            <div class="logo">
+                <img src="Imagenes/ESCUDO.jpg" alt="LogoMep" class="logo-img">
+                <img src="Imagenes/logo mapa.png" alt="LogoMapa" class="logo-img">
+            </div>  
+            <div>
+                <h1 class="school-name">Escuela Silvestre Rojas Murillo</h1> 
+            </div>           
+        </div>
+        <div class="header-bottom">
+            <nav class="nav-menu">
+                <a href="index.html">Inicio</a>
+                <a href="matricula.html" class="nav-link">Matrícula</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main>
+        <h1>Estudiantes Matriculados</h1>
+        <table border="2">
+            <thead>
+                <tr>
+                    <th>Nivel</th>
+                    <th>Primer Apellido</th>
+                    <th>Segundo Apellido</th>
+                    <th>Nombre</th>
+                    <th>Edad</th>
+                    <th>Sexo</th>
+                    <th>Fecha de Nacimiento</th>
+                    <th>Lugar de Nacimiento</th>
+                    <th>Dirección</th>
+                    <th>Nombre del Padre</th>
+                    <th>Nombre de la Madre</th>
+                    <th>Encargado</th>
+                    <th>Teléfono</th>
+                    <th>Observaciones</th>
+                    <th>Autorización</th>
+                    <th>Recibe Religión</th>
+                </tr>
+            </thead>
+            <tbody id="tabla-matriculados">
+                <!-- Los datos se llenarán dinámicamente con JavaScript -->
+            </tbody>
+        </table>
+
+        <!-- Botón para volver a la página principal -->
+        <button id="volver-btn" onclick="location.href='index.html'">Volver a la página principal</button>
+    </main>
+
+    <!-- Script para cargar datos dinámicamente -->
+    <script>
+        // Obtener estudiantes del localStorage
+        const estudiantes = JSON.parse(localStorage.getItem('matriculados')) || [];
+
+        // Llenar la tabla con los datos
+        const tabla = document.getElementById('tabla-matriculados');
+        estudiantes.forEach(estudiante => {
+            const fila = document.createElement('tr');
+            fila.innerHTML = `
+                <td>${estudiante.nivel}</td>
+                <td>${estudiante.apellido1}</td>
+                <td>${estudiante.apellido2}</td>
+                <td>${estudiante.nombre}</td>
+                <td>${estudiante.edad}</td>
+                <td>${estudiante.sexo}</td>
+                <td>${estudiante.fechaNacimiento}</td>
+                <td>${estudiante.lugarNacimiento}</td>
+                <td>${estudiante.direccion}</td>
+                <td>${estudiante.padre}</td>
+                <td>${estudiante.madre}</td>
+                <td>${estudiante.encargado}</td>
+                <td>${estudiante.celular}</td>
+                <td>${estudiante.observaciones}</td>
+                <td>${estudiante.autorizacion}</td>
+                <td>${estudiante.religion}</td>
+            `;
+            tabla.appendChild(fila);
+        });
+    </script>
+</body>
+</html>
+

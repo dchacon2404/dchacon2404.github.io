@@ -1,0 +1,494 @@
+/* General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
+    color: #333333;
+    line-height: 1.6;
+}
+
+.school-name {
+    font-size: 7em; /* Tamaño de fuente del título */
+    font-weight: bold;
+    text-align: center; /* Asegurar que el texto esté centrado */
+    color: #333333;
+    margin: 0; /* Eliminar márgenes extra del h1 */
+}
+
+/* Carrusel */
+.carousel {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    width: 100%; /* Ancho completo de la página */
+    max-height: 600px; /* Ajusta este valor para controlar la altura máxima */
+    margin-bottom: 20px; /* Espacio debajo del carrusel */
+}
+
+.carousel-images {
+    display: flex;
+    animation: slide 30s linear infinite; /* Animación continua */
+}
+
+.carousel-images img {
+    width: auto; /* Ancho automático para evitar distorsión */
+    max-width: 100%; /* Ajusta a un máximo del ancho del contenedor */
+    height: auto; /* Altura automática para mantener proporción */
+    flex-shrink: 0;
+}
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-100%); }
+    50% { transform: translateX(-200%); }
+    75% { transform: translateX(-300%); }
+    100% { transform: translateX(-400%); } /* Fin del recorrido */
+}
+
+
+/* Encabezado principal */
+/* Estilo general del encabezado */
+/* Encabezado superior */
+.small-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #003366; /* Azul institucional */
+    color: white;
+    padding: 10px 10px;
+    font-size: 0.2em;
+}
+
+.top-header .contact-info {
+    display: flex;
+    gap: 15px;
+}
+
+.top-header .quick-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+.top-header .quick-links a:hover {
+    text-decoration: underline;
+}
+
+.main-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar horizontalmente */
+    justify-content: center; /* Centrar verticalmente */
+    background-color: #ffffff; /* Fondo blanco */
+    color: #333333; /* Texto gris oscuro */
+    padding: 15px;
+    border-bottom: 2px solid #e0e0e0; /* Línea decorativa */
+    text-align: center;
+}
+
+/* Estilo de la parte superior del encabezado */
+.header-top {
+    display: flex;
+    align-items: center; /* Alinear verticalmente */
+    justify-content: center; /* Centrar los elementos horizontalmente */
+    gap: 5px; /* Espacio entre logos y el texto */
+    width: 50%;
+}
+
+/* Estilo para los logos */
+.logo {
+    display: flex;
+    align-items: center; /* Centrar imágenes verticalmente */
+    gap: 5px; /* Espacio entre los logos */
+}
+
+.logo-img {
+    height: 50px; /* Ajusta el tamaño del logo */
+    width: auto; /* Mantener proporciones */
+}
+
+/* Estilo del título de la escuela */
+.school-name {
+    font-size: 2rem; /* Tamaño grande */
+    font-weight: bold; /* Negrita */
+    margin: 0; /* Eliminar márgenes */
+    color: #003366; /* Azul institucional */
+}
+
+/* Estilo de la parte inferior del encabezado */
+.header-bottom {
+    margin-top: 15px;
+    width: 100%;
+    border-top: 2px solid #e0e0e0; /* Línea separadora */
+    padding-top: 10px;
+}
+
+.nav-menu a {
+    color: #003366;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.nav-menu a:hover {
+    color: #007acc;
+}
+
+/* Estilo para las tarjetas */
+
+/* Sección principal */
+/* Estilo general */
+body {
+    font-family: 'Poppins', sans-serif; /* Tipografía moderna y amigable */
+    background-color: #f3f4f6; /* Fondo claro */
+    color: #333; /* Texto oscuro para buen contraste */
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo del contenedor principal */
+/* Contenedor principal */
+.main-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Tarjetas más pequeñas */
+    gap: 15px; /* Menor espacio entre tarjetas */
+    padding: 20px; /* Menor espaciado general */
+}
+
+/* Estilo para las tarjetas */
+.card {
+    background-color: #ffffff; /* Fondo blanco limpio */
+    border-radius: 10px; /* Bordes redondeados suaves */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    padding: 15px; /* Menor espaciado interno */
+    text-align: center; /* Centrar el texto */
+    transition: transform 0.3s, box-shadow 0.3s; /* Animación */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Animación al pasar el cursor */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Sombra más prominente */
+}
+
+/* Títulos */
+.card h2 {
+    font-size: 1.4rem; /* Reducir el tamaño del título */
+    color: #00796b; /* Verde amigable */
+    margin-bottom: 10px; /* Reducir el margen inferior */
+}
+
+/* Texto */
+.card p {
+    font-size: 0.9rem; /* Reducir tamaño del texto */
+    color: #555; /* Gris suave */
+    line-height: 1.4; /* Reducir espaciado entre líneas */
+    margin-bottom: 10px; /* Margen inferior pequeño */
+}
+
+/* Lista de valores */
+.card ul {
+    list-style: none; /* Quitar viñetas */
+    padding: 0;
+    margin: 0;
+}
+
+.card ul li {
+    font-size: 0.9rem; /* Reducir texto */
+    color: #444;
+    background-color: #e0f7fa; /* Fondo azul claro */
+    padding: 8px; /* Reducir espaciado interno */
+    border-radius: 8px; /* Bordes más pequeños */
+    margin: 3px 0; /* Reducir separación entre elementos */
+    font-weight: bold; /* Texto destacado */
+}
+
+/* Adaptación para pantallas pequeñas */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 10px; /* Reducir padding para pantallas pequeñas */
+    }
+
+    .card {
+        padding: 10px; /* Reducir padding interno */
+    }
+
+    .card h2 {
+        font-size: 1.2rem; /* Reducir título aún más */
+    }
+
+    .card p, .card ul li {
+        font-size: 0.8rem; /* Texto más pequeño */
+    }
+}
+
+/* Sección de Contacto */
+.contact-section {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 1.8rem;
+    color: #00796b;
+    margin-bottom: 15px;
+}
+
+.contact-info {
+    margin-bottom: 20px;
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
+
+.contact-form h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.contact-form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: 'Arial', sans-serif;
+}
+
+.contact-form button {
+    background-color: #00796b;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #005f50;
+}
+
+
+
+/* Pie de página */
+.footer {
+    background-color: #f5f5f5;
+    text-align: center;
+    padding: 10px;
+    color: #333333;
+    border-top: 2px solid #e0e0e0;
+}
+
+
+/* matricula*/
+
+
+/* Estilo para el título principal */
+.title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+/* Estilos para el formulario */
+.matricula-form {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Estilos para los fieldsets */
+fieldset {
+    border: 2px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    background-color: #fafafa;
+}
+
+/* Estilos para los legend */
+legend {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #34495e;
+}
+
+/* Estilos para los títulos y controles en una línea */
+.field-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.field-group label {
+    margin-right: 10px;
+    font-size: 1rem;
+    color: #555;
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+}
+
+.field-group input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* Estilo para los inputs y selects */
+input[type="text"],
+input[type="number"],
+input[type="tel"],
+input[type="date"],
+textarea,
+select {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Estilo para los botones */
+button[type="submit"] {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #27ae60;
+}
+
+/* Estilos para los textos dentro del formulario */
+textarea {
+    resize: vertical;
+    font-size: 1rem;
+}
+
+/* Ajustes responsivos */
+@media screen and (max-width: 600px) {
+    .matricula-form {
+        padding: 20px;
+        width: 100%;
+    }
+    .field-group {
+        flex-direction: column; /* Cambia a una disposición vertical en pantallas pequeñas */
+        align-items: flex-start;
+    }
+    .field-group label {
+        margin-bottom: 5px;
+    }
+}
+
+
+/* Estilo para la tabla de estudiantes matriculados */
+/* Estilo para la tabla de estudiantes matriculados */
+table {
+    width: 100%; /* Ocupa todo el ancho del header */
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    text-align: center; /* Centrar contenido */
+}
+
+table th {
+    background-color: #959595; /* Verde atractivo */
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9; /* Color alternado */
+}
+
+table tr:nth-child(odd) {
+    background-color: #fff; /* Blanco */
+}
+
+table tr:hover {
+    background-color: #f1f1f1; /* Efecto hover */
+    cursor: pointer;
+}
+
+table td {
+    color: #555; /* Texto más claro */
+}
+
+/* Ajustar la tabla dentro del header */
+.header-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.header-top table {
+    width: 100%; /* Tabla del mismo ancho que el header */
+    max-width: 1200px; /* Limitar el tamaño máximo */
+}
+
+#volver-btn {
+    display: inline-block;
+    background-color: #818181; /* Color verde */
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    margin-top: 20px; /* Espaciado superior */
+}
+
+#volver-btn:hover {
+    background-color: #362f92; /* Verde más oscuro al pasar el cursor */
+}
+
+

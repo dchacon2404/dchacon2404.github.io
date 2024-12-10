@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boleta de Matrícula - Curso Lectivo 2025</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Encabezado Principal -->
+    <header class="main-header">
+        <div class="header-top">
+            <div class="logo">
+                <img src="Imagenes/ESCUDO.jpg" alt="LogoMep" class="logo-img">
+                <img src="Imagenes/logo mapa.png" alt="LogoMapa" class="logo-img">
+            </div>  
+            <div>
+                <h1 class="school-name">Escuela Silvestre Rojas Murillo</h1> 
+            </div>           
+        </div>
+        <div class="header-bottom">
+            <nav class="nav-menu">
+                <a href="index.html">Inicio</a>
+                <a href="matriculados.html" class="nav-link">Matriculados</a>
+            </nav>
+        </div>
+    </header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boleta de Matrícula - Curso Lectivo 2025</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1 class="title">BOLETA DE MATRÍCULA CURSO LECTIVO 2025</h1>
+    <form class="matricula-form">
+        <!-- Cuadro de datos personales -->
+        <fieldset>
+            <legend>Datos del Estudiante</legend>
+            <label for="nivel">Nivel:</label>
+            <select id="nivel" name="nivel">
+                <option value="Interactivo II">Interactivo II</option>
+                <option value="Transición">Transición</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+            </select><br><br>
+            
+            <label for="apellido1">Primer Apellido:</label>
+            <input type="text" id="apellido1" name="apellido1"><br><br>
+            
+            <label for="apellido2">Segundo Apellido:</label>
+            <input type="text" id="apellido2" name="apellido2"><br><br>
+            
+            <label for="nombre">Nombre Completo:</label>
+            <input type="text" id="nombre" name="nombre">
+        </fieldset><br>
+
+        <!-- Información adicional -->
+        <fieldset>
+            <legend>Información Adicional</legend>
+            <label for="edad">Edad al 15/2/2025:</label>
+            <input type="number" id="edad" name="edad" min="3" max="12"><br><br>
+
+            <label>Sexo:</label>
+            <input type="radio" id="masculino" name="sexo" value="Masculino">
+            <label for="masculino">Masculino</label>
+            <input type="radio" id="femenino" name="sexo" value="Femenino">
+            <label for="femenino">Femenino</label><br><br>
+
+            <label for="fecha-nacimiento">Fecha de Nacimiento:</label>
+            <input type="date" id="fecha-nacimiento" name="fecha-nacimiento"><br><br>
+
+            <label for="lugar-nacimiento">Lugar de Nacimiento:</label>
+            <input type="text" id="lugar-nacimiento" name="lugar-nacimiento"><br><br>
+
+            <label for="direccion">Dirección Exacta:</label>
+            <textarea id="direccion" name="direccion"></textarea><br><br>
+
+            <label for="padre">Nombre del Padre:</label>
+            <input type="text" id="padre" name="padre"><br><br>
+
+            <label for="madre">Nombre de la Madre:</label>
+            <input type="text" id="madre" name="madre"><br><br>
+
+            <label for="encargado">Encargado Legal:</label>
+            <input type="text" id="encargado" name="encargado"><br><br>
+
+            <label for="celular">Número de Celular:</label>
+            <input type="tel" id="celular" name="celular">
+        </fieldset><br>
+
+        <!-- Observaciones -->
+        <fieldset>
+            <legend>Observaciones</legend>
+            <textarea id="observaciones" name="observaciones" rows="4" cols="50"></textarea>
+        </fieldset><br>
+
+        <!-- Normativa -->
+        <p>
+            Tengo pleno conocimiento que existe una Normativa Interna Institucional que se debe respetar.<br>
+            Autorizo a la Institución para reproducir fotografías, filmaciones y grabaciones de la voz o archivos de audio,
+            fotografía o video para su uso en actividades curriculares y extracurriculares.
+        </p>
+        <label>Autorización:</label>
+        <input type="radio" id="autorizo-si" name="autorizo" value="Sí">
+        <label for="autorizo-si">Sí</label>
+        <input type="radio" id="autorizo-no" name="autorizo" value="No">
+        <label for="autorizo-no">No</label><br><br>
+
+        <label>Recibe Religión:</label>
+        <input type="radio" id="religion-si" name="religion" value="Sí">
+        <label for="religion-si">Sí</label>
+        <input type="radio" id="religion-no" name="religion" value="No">
+        <label for="religion-no">No (Presentar carta del encargado)</label><br><br>
+
+        <button type="submit">Enviar Matrícula</button>
+    </form>
+</body>
+
+<script>
+    document.querySelector('.matricula-form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevenir el comportamiento por defecto del formulario
+
+        // Capturar datos del formulario
+        const matriculaData = {
+            nivel: document.getElementById('nivel').value,
+            apellido1: document.getElementById('apellido1').value,
+            apellido2: document.getElementById('apellido2').value,
+            nombre: document.getElementById('nombre').value,
+            edad: document.getElementById('edad').value,
+            sexo: document.querySelector('input[name="sexo"]:checked')?.value || '',
+            fechaNacimiento: document.getElementById('fecha-nacimiento').value,
+            lugarNacimiento: document.getElementById('lugar-nacimiento').value,
+            direccion: document.getElementById('direccion').value,
+            padre: document.getElementById('padre').value,
+            madre: document.getElementById('madre').value,
+            encargado: document.getElementById('encargado').value,
+            celular: document.getElementById('celular').value,
+            observaciones: document.getElementById('observaciones').value,
+            autorizo: document.querySelector('input[name="autorizo"]:checked')?.value || '',
+            religion: document.querySelector('input[name="religion"]:checked')?.value || ''
+        };
+
+        // Obtener estudiantes existentes de localStorage
+        const estudiantes = JSON.parse(localStorage.getItem('matriculados')) || [];
+        
+        // Agregar nueva matrícula
+        estudiantes.push(matriculaData);
+
+        // Guardar nuevamente en localStorage
+        localStorage.setItem('matriculados', JSON.stringify(estudiantes));
+
+        alert('¡Matrícula guardada con éxito!');
+        window.location.href = 'index.html'; // Redirigir a la página principal
+    });
+</script>
+
+</html>
